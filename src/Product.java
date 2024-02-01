@@ -100,10 +100,10 @@ public class Product {
 
     {
         if(this.inCurrentProductLine == true) {
-            return "Product description: " + this.productName + " product code: " + this.productCode + " unit cost: " + this.unitCost + " is currently in product line?: Y";
+            return "Product description: " + this.productName + " product code: " + this.productCode + " unit cost: " + this.unitCost + " is currently in product line?:  Y";
         }
         else {
-            return "Product description: " + this.productName + " product code: " + this.productCode + " unit cost: " + this.unitCost + " is currently in product line?: N";
+            return "Product description: " + this.productName + " product code: " + this.productCode + " unit cost: " + this.unitCost + " is currently in product line?:  N";
         }
     }
 
