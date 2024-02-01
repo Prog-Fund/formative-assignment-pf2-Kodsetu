@@ -24,6 +24,7 @@ public class Product {
        this.productName = productName;
        this.productCode = productCode;
        this.unitCost = unitCost;
+       this.inCurrentProductLine = inCurrentProductLine;
     }
 
     //-------
@@ -98,7 +99,12 @@ public class Product {
     //  "Product description: Flatscreen TV  product code: 2000  unit cost: 1000 and currently in product line: Y"
 
     {
-        return "TO DO WRITE TOSTRING";
+        if(this.inCurrentProductLine == true) {
+            return "Product description: " + this.productName + " product code: " + this.productCode + " unit cost: " + this.unitCost + " is currently in product line?: Y";
+        }
+        else {
+            return "Product description: " + this.productName + " product code: " + this.productCode + " unit cost: " + this.unitCost + " is currently in product line?: N";
+        }
     }
 
 }

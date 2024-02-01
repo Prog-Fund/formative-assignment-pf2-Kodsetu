@@ -168,14 +168,14 @@ class ProductTest {
             assertTrue(toStringContents.contains("Product description: " + tv50Inches.getProductName()));
             assertTrue(toStringContents.contains("product code: " + tv50Inches.getProductCode()));
             assertTrue(toStringContents.contains("unit cost: " + tv50Inches.getUnitCost()));
-            assertTrue(toStringContents.contains("currently in product line: Y"));
+            assertTrue(toStringContents.contains(" is currently in product line?: Y"));
 
             //Testing when the value of inCurrentProductLine is false
             toStringContents = tv60Inches.toString();
             assertTrue(toStringContents.contains("Product description: " + tv60Inches.getProductName()));
             assertTrue(toStringContents.contains("product code: " + tv60Inches.getProductCode()));
             assertTrue(toStringContents.contains("unit cost: " + tv60Inches.getUnitCost()));
-            assertTrue(toStringContents.contains("currently in product line: N"));
+            assertTrue(toStringContents.contains(" is currently in product line?: N"));
         }
     }
 }
