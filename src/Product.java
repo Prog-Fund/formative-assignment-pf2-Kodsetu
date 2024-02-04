@@ -21,10 +21,10 @@ public class Product {
      * @param unitCost Unit cost of the product - valid values are any positive number
      */
     public Product(String productName, int productCode, double unitCost, boolean inCurrentProductLine) {
-       this.productName = productName;
-       this.productCode = productCode;
-       this.unitCost = unitCost;
-       this.inCurrentProductLine = inCurrentProductLine;
+       setProductName(productName);
+       setProductCode(productCode);
+       setUnitCost(unitCost);
+       setInCurrentProductLine(inCurrentProductLine);
     }
 
     //-------
@@ -66,21 +66,34 @@ public class Product {
      * @param productCode The new Product Code
      */
     public void setProductCode(int productCode) {
-            this.productCode = productCode;
+            if((productCode > 5000) || (productCode < 1000)){
+                productCode = 5000;
+                this.productCode = productCode;
+            }
+            else{ this.productCode = productCode;}
     }
     /**
      * Updates the Product Name to the value passed as a parameter
      * @param productName The new Product Name
      */
     public void setProductName(String productName) {
+        if(productName == null){
+            productName = "";
             this.productName = productName;
+        } else if (productName.length() > 20) {
+            this.productName = productName.substring(0,20);
+        }
+        else{this.productName = productName;}
     }
     /**
      * Updates the Unit Cost to the value passed as a parameter
      * @param unitCost The new unit cost for the product
      */
     public void setUnitCost(double unitCost) {
-            this.unitCost = unitCost;
+        if(unitCost < 1){
+            unitCost = 1;
+            this.unitCost = unitCost;}
+        else{this.unitCost = unitCost;}
     }
     /**
      * Updates the boolean indicating whether the product is in the current product line or not.
@@ -100,10 +113,10 @@ public class Product {
 
     {
         if(this.inCurrentProductLine == true) {
-            return "Product description: " + this.productName + " product code: " + this.productCode + " unit cost: " + this.unitCost + " is currently in product line?:  Y";
+            return "Product description: " + this.productName + " product code: " + this.productCode + " unit cost: " + this.unitCost + " is currently in product line?: Y";
         }
         else {
-            return "Product description: " + this.productName + " product code: " + this.productCode + " unit cost: " + this.unitCost + " is currently in product line?:  N";
+            return "Product description: " + this.productName + " product code: " + this.productCode + " unit cost: " + this.unitCost + " is currently in product line?: N";
         }
     }
 
