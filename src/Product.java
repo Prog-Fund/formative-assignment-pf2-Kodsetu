@@ -90,10 +90,10 @@ public class Product {
      * @param unitCost The new unit cost for the product
      */
     public void setUnitCost(double unitCost) {
-        if(unitCost < 1){
-            unitCost = 1;
+        if(unitCost > 0){
             this.unitCost = unitCost;}
-        else{this.unitCost = unitCost;}
+        else{unitCost = 1;
+            this.unitCost = unitCost;}
     }
     /**
      * Updates the boolean indicating whether the product is in the current product line or not.
